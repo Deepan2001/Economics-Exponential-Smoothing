@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Software Engineering Economics</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
+.w3-bar-block .w3-bar-item {padding:20px}
+</style>
+</head>
+<body>
+
+<!-- Top menu -->
+<div class="w3-top">
+  <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
+    <a href="./login-register-php-pdo/index.php"><div class="w3-left w3-padding-16">Login</div></a>
+    <a href="./login-register-php-pdo/registration.php"><div class="w3-right w3-padding-16">Signup</div></a>
+    <div class="w3-center w3-padding-16">Software Engineering Economics</div>
+  </div>
+</div>
+
+  <hr id="about">
+
+  <!-- About Section -->
+  <div class="w3-container w3-padding-32">  
+    <center><h3>Exponential Smoothing</h3><br></center>
+    <img src="https://assets.website-files.com/60e7f71b22c6d0b9cf329ceb/621e1a2f28ded71ee95aeede_6ProvenSalesForecastingMethodstoDriveRevenue1_a117440b5ae227c3dba5264a6521da06_2000.png" alt="Me" class="w3-image" style="display:block;margin:auto" width="800" height="533">
+    <div class="w3-padding-32">
+      <center><h4><b>Definition!</b></h4></center>
+      <p>Exponential smoothing is a statistical method used for time series forecasting. It involves smoothing a time series by giving more weight to recent observations and less weight to older observations. The method is based on the assumption that the time series contains both a systematic pattern (trend, seasonality, etc.) and a random component (noise), and that the random component can be smoothed out by giving more weight to recent observations.</p>
+      <br>
+      <center><h4><b>Idea</b></h4></center>
+      <p>The basic idea behind exponential smoothing is to calculate a weighted average of the past observations, where the weights decrease exponentially as the observations get older. The amount of weight given to each observation is determined by a smoothing parameter, usually denoted by the symbol alpha (α). The larger the value of alpha, the more weight is given to recent observations, and the smoother the resulting time series.</p>
+      <br>
+      <center><h4><b>Steps to Calculate</b></h4></center>
+      <p>To calculate exponential smoothing, follow these steps:</p>
+      <p>1. Choose a smoothing parameter, denoted by the symbol alpha (α), which is a value between 0 and 1. A smaller value of alpha gives more weight to older observations, while a larger value gives more weight to recent observations.</p>
+      <p>2. Choose an initial forecast value for the first period in the time series.</p>
+      <p>3. For each subsequent period, calculate the exponential smoothing forecast value using the following formula:
+
+        <b>F(t) = alpha * Y(t) + (1 - alpha) * F(t-1)</b><br>
+        where F(t) is the forecast value for period t, Y(t) is the actual value for period t, and F(t-1) is the forecast value for period t-1.
+    </p>
+      <p>4. Repeat step 3 for each period in the time series, using the most recent forecast value as the input for the next period.</p>
+      <p>Note that the choice of initial forecast value can have a significant impact on the accuracy of the forecast, particularly for shorter time series. A common approach is to set the initial forecast value equal to the first actual value in the time series, but other methods can also be used, such as the average of the first few values or a random value.</p>
+      <p>Also note that exponential smoothing is a simple and effective method for forecasting time series data that has a systematic pattern but contains random noise. However, it is not suitable for all types of time series data, particularly data with no systematic pattern or with very long-term trends or seasonality. In such cases, other forecasting methods may be more appropriate.</p>
+      <br>
+      <center><h4><b>Advantages of using Exponential Smoothing</b></h4></center>
+      <p>1. Exponential smoothing is a simple and intuitive method that requires minimal mathematical knowledge to understand and use effectively.</p>
+      <p>2. It is a relatively fast and computationally efficient method that can be used for large datasets.</p>
+      <p>3. Exponential smoothing can handle time series data with missing values or irregular time intervals.</p>
+      <p>4. It can be used for a wide range of applications, including sales forecasting, inventory management, and financial forecasting.</p>
+      <p>5. Exponential smoothing provides a forecast that is responsive to changes in the time series, giving more weight to recent observations.</p>
+      <br>
+      <center><h4><b>Disadvantages of using Exponential Smoothing</b></h4></center>
+      <p>1. Exponential smoothing assumes that the time series has a systematic pattern that can be modeled using a simple exponential function, and is therefore not suitable for all types of time series data.</p>
+      <p>2. It is sensitive to the choice of smoothing parameter alpha and initial forecast value, which can have a significant impact on the accuracy of the forecast.</p>
+      <p>3. Exponential smoothing can result in over-smoothing or under-smoothing of the time series, depending on the value of alpha and the characteristics of the time series.</p>
+      <p>4. It does not account for external factors or changes in the underlying process that may affect the time series, such as changes in customer behavior or market conditions.</p>
+      <p>5. Exponential smoothing does not provide a measure of uncertainty or confidence interval for the forecast, which can be important for decision-making in some applications.</p>
+      <br>
+      <center><h4><b>Types of Exponential Smoothing</b></h4></center>
+      <p><b>1. Simple exponential smoothing:</b> This is the most basic form of exponential smoothing, and is used when the time series has no trend or seasonality. Simple exponential smoothing uses a single smoothing parameter (alpha) to calculate a weighted average of the previous observations, with more weight given to the most recent observations.</p>
+      <p><b>2. Holt's linear exponential smoothing:</b> This method is used when the time series has a linear trend but no seasonality. Holt's linear exponential smoothing uses two smoothing parameters (alpha and beta) to calculate a forecast that includes both the level and trend of the time series.</p>
+      <p><b>3. Holt-Winters exponential smoothing:</b> This method is used when the time series has both a trend and seasonality. Holt-Winters exponential smoothing uses three smoothing parameters (alpha, beta, and gamma) to calculate a forecast that includes the level, trend, and seasonality of the time series.</p>
+      <p>In software engineering economics, exponential smoothing can be used to forecast software development effort, cost, and schedule. It can also be used to monitor software project performance and identify deviations from the plan. However, it is important to note that exponential smoothing is just one of many methods that can be used in software engineering economics, and the choice of method will depend on the specific application and data being analyzed.</p>
+      <br>
+      <center><button style="background-color: aquamarine;"><a href="./login-register-php-pdo/index.php"><h4><b>Calculate Exponential Smoothing</b></h4></a></button></center> 
+
+    </div>
+  </div>
+  <hr>
+  
+  <!-- Footer -->
+  <footer class="w3-row-padding w3-padding-32 w3-center">
+    <div>
+      <h3>Done By</h3>
+      <h3>S.Deepan - 19MIS0102</h3>
+    </div>
+  </footer>
+
+<!-- End page content -->
+</div>
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+}
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+</script>
+
+</body>
+</html>
